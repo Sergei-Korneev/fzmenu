@@ -1,0 +1,18 @@
+# Example cmdmenu config.  Indent = nesting (4 spaces per level).
+# leaf:  Name => shell command      menu:  Name
+
+Disks
+    Open /dev/sda       => crym2 -a open -d /dev/sda -c yes
+    Close /dev/sda      => crym2 -a close -d /dev/sda
+    Show devices        => lsblk -f
+
+Sync
+    Home -> disk A      => sync2 <HASH-A>
+    Unmount all         => umoall
+
+System
+    Uptime              => uptime
+    Disk usage          => df -h
+    Memory
+        Summary         => free -h
+        Top processes   => ps aux --sort=-%mem | head
